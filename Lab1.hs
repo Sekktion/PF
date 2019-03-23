@@ -31,7 +31,7 @@ maiorEntreTres x y z = if x>y && x>z then x else if y>x && y>z then y else z
 maiorQueZero::Int->Int --Ex 10
 maiorQueZero x = if x>0 then 1 else if x<0 then (-1) else 0
 
-ehLetra::Char->Bool --Ex 11 INCOMPLETO
+ehLetra::Char->Bool --Ex 11
 ehLetra x = if (x >= 'a' && x <= 'z') || (x >= 'A' || x <= 'Z') then True else False
 
 ladosTriangRet::Double->Double->Double->Bool --Ex 12
