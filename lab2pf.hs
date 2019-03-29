@@ -33,6 +33,21 @@ precede (d1,m1,a1) (d2,m2,a2)
 	 == True) = True
 	| otherwise = False
 	
-type Livro = (Int,String,String,String,Int) --Exercicio 7
-type Aluno = (Int, String, String, Int)
-type Emprestimo = (Int, Int, Data, Data, String)
+type Livro = (String,String,String,String,Int) --Exercicio 7
+type Aluno = (String, String, String, Int)
+type Emprestimo = (String, String, Data, Data, String)
+
+e1::Emprestimo  --Exercicio 8
+e1 = ("H123C9","BSI200945",(12,9,2009),(20,9,2009),"aberto")
+
+checaEmprestimo::Emprestimo->Data->Bool
+checaEmprestimo (_,_,(d1,m1,a1),(d2,m2,a2),_) (d3,m3,a3)
+	|(d3 > d1) && (m3 == m1) && (a3 == a1) && (valida (d3,m3,a3) == True) && 
+	(valida (d1,m1,a1) == True) && (d2 > d3) && (m2 == m3) && (a2 == a3) && (valida (d3,m3,a3) == True) && 
+	(valida (d2,m2,a2) == True) = True
+	| (m3 > m1) && (a3 == a1) && (valida (d1,m1,a1) == True) && 
+	(valida (d3,m3,a3) == True) && (m2 > m3) && (a2 == a3) && (valida (d2,m2,a2) == True) && 
+	(valida (d3,m3,a3) == True) = True
+	| (a3 > a1) && (valida (d1,m1,a1) == True) && (valida (d3,m3,a3) == True) &&
+	(a3 > a2) && (valida (d2,m2,a2) == True) = True
+	| otherwise = False
