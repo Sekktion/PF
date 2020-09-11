@@ -247,12 +247,12 @@ notasTroco valor = [v:vs | v <- disponiveis, valor >= v,
  vs <- notasTroco (valor-v)]
 
 --Exercicio 20
-criaLista::Int->[Int]
-criaLista n = [1..n]
+-- criaLista::Int->[Int]
+-- criaLista n = [1..n]
 
-verificaLista:
+-- verificaLista:
 
-atribuiRainhas
+-- atribuiRainhas
 
-nRainhas::Int->[Int]
-nRainhas n = [r1 | <- [1..n]]
+-- nRainhas::Int->[Int]
+-- nRainhas n = [r1 | <- [1..n]]
